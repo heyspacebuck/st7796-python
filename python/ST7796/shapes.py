@@ -5,7 +5,7 @@ from PIL import Image
 from PIL import ImageDraw
 from PIL import ImageFont
 
-import ST7789
+import ST7796
 
 print("""
 shapes.py - Display test shapes on the LCD using PIL.
@@ -28,37 +28,18 @@ try:
 except IndexError:
     display_type = "square"
 
-# Create ST7789 LCD display class.
-
-if display_type in ("square", "rect", "round"):
-    disp = ST7789.ST7789(
-        height=135 if display_type == "rect" else 240,
-        rotation=0 if display_type == "rect" else 90,
-        port=0,
-        cs=ST7789.BG_SPI_CS_FRONT,  # BG_SPI_CS_BACK or BG_SPI_CS_FRONT
-        dc=9,
-        backlight=19,               # 18 for back BG slot, 19 for front BG slot.
-        spi_speed_hz=80 * 1000 * 1000,
-        offset_left=0 if display_type == "square" else 40,
-        offset_top=53 if display_type == "rect" else 0
-    )
-
-elif display_type == "dhmini":
-    disp = ST7789.ST7789(
-        height=240,
-        width=320,
-        rotation=180,
-        port=0,
-        cs=1,
-        dc=9,
-        backlight=13,
-        spi_speed_hz=60 * 1000 * 1000,
-        offset_left=0,
-        offset_top=0
-   )
-
-else:
-    print ("Invalid display type!")
+# Create ST7796 LCD display class.
+disp = ST7796.ST7796(
+    height=320,
+    width=480,
+    rotation=0,
+    port=0,
+    cs=0,  # BG_SPI_CS_BACK or BG_SPI_CS_FRONT
+    dc=9,
+    spi_speed_hz=16000000,
+    offset_left=0,
+    offset_top=0
+)
 
 # Initialize display.
 disp.begin()
