@@ -7,27 +7,6 @@ from PIL import ImageFont
 
 import ST7796
 
-print("""
-shapes.py - Display test shapes on the LCD using PIL.
-
-If you're using Breakout Garden, plug the 1.3" LCD (SPI)
-breakout into the front slot.
-
-Usage: {} <display_type>
-
-Where <display_type> is one of:
-
-  * square - 240x240 1.3" Square LCD
-  * round  - 240x240 1.3" Round LCD (applies an offset)
-  * rect   - 240x135 1.14" Rectangular LCD (applies an offset)
-  * dhmini - 320x240 2.0" Display HAT Mini
-""".format(sys.argv[0]))
-
-try:
-    display_type = sys.argv[1]
-except IndexError:
-    display_type = "square"
-
 # Create ST7796 LCD display class.
 disp = ST7796.ST7796(
     height=320,
@@ -102,3 +81,5 @@ draw_rotated_text(img, 'This is a line of text.', (10, HEIGHT - 10), 0, font, fi
 # Write buffer to display hardware, must be called to make things visible on the
 # display!
 disp.display(img)
+
+print("hellote")
