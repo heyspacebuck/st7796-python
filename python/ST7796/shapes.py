@@ -9,12 +9,12 @@ import ST7796
 
 # Create ST7796 LCD display class.
 disp = ST7796.ST7796(
-    height=320,
-    width=480,
+    height=480,
+    width=320,
     rotation=0,
     port=0,
     cs=0,  # BG_SPI_CS_BACK or BG_SPI_CS_FRONT
-    reset=27,
+    rst=27,
     dc=22,
     spi_speed_hz=16000000,
     offset_left=0,
