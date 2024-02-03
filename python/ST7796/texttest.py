@@ -37,9 +37,10 @@ draw = ImageDraw.Draw(img)
 
 # Load a TTF font.
 # Some other nice fonts to try: http://www.dafont.com/bitmap.php
-font = ImageFont.truetype('ChiKareGo.ttf', 16)
+fontL = ImageFont.truetype('ChiKareGo.ttf', 60)
+fontS = ImageFont.truetype('ChiKareGo.ttf', 30)
 
-draw.text((10, 10), "May I take your photo?", font=font, fill=(220, 220, 255))
+#draw.text((1, 1), "May I take your photo?", font=font, fill=(100, 100, 255))
 
 
 
@@ -64,6 +65,9 @@ def draw_rotated_text(image, text, position, angle, font, fill=(255, 255, 255)):
 # Write two lines of white text on the buffer, rotated 90 degrees counter clockwise.
 #draw_rotated_text(img, 'Hello World!', (0, 0), 90, font, fill=(255, 255, 255))
 #draw_rotated_text(img, 'This is a line of text.', (10, HEIGHT - 10), 0, font, fill=(255, 255, 255))
+
+draw_rotated_text(img, "May I take your photo?", (1, 1), font=fontL, fill=(100,100,255))
+draw_rotated_text(img, "Est-ce que je peux prendre votre photo?", (1, 101), font=fontS, fill=(255,255,0))
 
 # Write buffer to display hardware, must be called to make things visible on the
 # display!
