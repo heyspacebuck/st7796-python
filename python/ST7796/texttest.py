@@ -66,8 +66,8 @@ def draw_rotated_text(image, text, position, angle, font, fill=(255, 255, 255)):
 #draw_rotated_text(img, 'Hello World!', (0, 0), 90, font, fill=(255, 255, 255))
 #draw_rotated_text(img, 'This is a line of text.', (10, HEIGHT - 10), 0, font, fill=(255, 255, 255))
 
-draw_rotated_text(img, "May I take your photo?", (1, 1), font=fontL, fill=(100,100,255))
-draw_rotated_text(img, "Est-ce que je peux prendre votre photo?", (1, 101), font=fontS, fill=(255,255,0))
+draw_rotated_text(img, "May I take your photo?", (1, 1), 90, font=fontL, fill=(100,100,255))
+draw_rotated_text(img, "Est-ce que je peux prendre votre photo?", 90, (1, 101), font=fontS, fill=(255,255,0))
 
 # Write buffer to display hardware, must be called to make things visible on the
 # display!
